@@ -40,11 +40,9 @@ jobs:
       language: node_js
       script: |
         set -e
-        chmod +x scripts/npm-publish.js
         yarn bumpVersion:release
         git add .
         git push --verbose --no-verify --follow-tags origin HEAD:${TRAVIS_BRANCH}
-        node scripts/npm-publish.js
       skip_cleanup: true
       on:
         all_branches: true
@@ -55,11 +53,9 @@ jobs:
       language: node_js
       script: |
         set -e
-        chmod +x scripts/npm-publish.js
         yarn bumpVersion:master
         git add .
         git push --verbose --no-verify --follow-tags origin HEAD:${TRAVIS_BRANCH}
-        node scripts/npm-publish.js
       skip_cleanup: true
       on:
         all_branches: true
