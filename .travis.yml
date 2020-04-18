@@ -1,0 +1,66 @@
+if: branch =~ ^master$|^development|^release
+
+language: node_js
+
+cache:
+  yarn: true
+
+node_js:
+  - 8
+  - 10
+  - 12
+
+before_install:
+  - npm install -g yarn@^1.16.0
+  - git config user.email "builds@travis-ci.com"
+  - git config user.name "Travis CI"
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ~/.npmrc
+
+install:
+  - yarn install --frozen-lockfile
+
+# Trigger test
+# before_script:
+#   - docker-compose up -d
+
+script:
+  - yarn lint
+  - yarn test
+
+jobs:
+  include:
+    # Trigger build, just for testing and fail fast
+    - stage: build
+      language: node_js
+      script:
+        - yarn build
+
+    # This will cut a alpha release for fast iteration and testing
+    - stage: deploy
+      language: node_js
+      script: |
+        set -e
+        chmod +x scripts/npm-publish.js
+        yarn bumpVersion:release
+        git add .
+        git push --verbose --no-verify --follow-tags origin HEAD:${TRAVIS_BRANCH}
+        node scripts/npm-publish.js
+      skip_cleanup: true
+      on:
+        all_branches: true
+      if: (branch =~ /^(release*)/) AND type != pull_request AND !(commit_message =~ /(\[skip release-ci\])/)
+
+    # This will cut a release for production
+    - stage: deploy
+      language: node_js
+      script: |
+        set -e
+        chmod +x scripts/npm-publish.js
+        yarn bumpVersion:master
+        git add .
+        git push --verbose --no-verify --follow-tags origin HEAD:${TRAVIS_BRANCH}
+        node scripts/npm-publish.js
+      skip_cleanup: true
+      on:
+        all_branches: true
+      if: (branch IN (master)) AND type != pull_request AND !(commit_message =~ /(\[skip master-ci\])/)

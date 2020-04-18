@@ -1,14 +1,22 @@
 {
-  "name": "node-cache",
+  "name": "webstorage-utils",
   "version": "1.0.0",
   "description": "web storage utils",
   "main": "dist/web-storage-util.umd.js",
   "module": "dist/web-storage-util.es5.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint --ext .ts src",
     "lint:fix": "yarn lint --fix",
     "prebuild": "rimraf dist",
-    "build": "rimraf dist && tsc --module commonjs && rollup -c rollup.config.ts"
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "start": "rollup -c rollup.config.ts -w",
+    "prepublishOnly": "yarn build",
+    "generateDoc": "typedoc --options typedoc.js",
+    "bumpVersion:master": "standard-version --commit-all --message 'chore(production): %s\n\n[skip master-ci]' --no-verify",
+    "bumpVersion:release": "standard-version --commit-all --message 'chore(release): %s\n\n[skip release-ci]' --no-verify --prerelease alpha"
   },
   "husky": {
     "hooks": {
@@ -23,9 +31,12 @@
   },
   "keywords": [
     "web",
-    "web storage",
-    "cache"
+    "web storage"
   ],
+  "engines": {
+    "node": ">=8.0.0",
+    "yarn": ">=1.13.0"
+  },
   "author": "Zn",
   "license": "ISC",
   "git": "https://gitee.com/zorn/web-storage-utils.git",
