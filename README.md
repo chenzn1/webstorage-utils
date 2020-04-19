@@ -24,32 +24,32 @@ const storage = new WebStorageUtil({ storage: 'localStorage' })
 ### 设置值，storage.set(key, value[, ttl])
 - `key`: string
 - `value`: any
-- `ttl`: number, 单位：秒
+- `ttl`: number, second
 
 ```javascript
 storage.set('key1', 1)
 
 storage.set('key2', { example: 1 })
 
-// 10 秒后失效
+// invalid after 10 seconds
 storage.set('key3', { example: 1 }, 10)
 ```
 
-### 根据 key 获取值，storage.get(key)
+### storage.get(key)
 - `key`: string
 
 ```javascript
 const value1 = storage.set('key1')
 ```
 
-### 删除单个 key，storage.del(key)
+### storage.del(key)
 - `key`: string
 
 ```javascript
 storage.del('key1')
 ```
 
-### 清空全部，storage.clear()
+### storage.clear()
 
 ```javascript
 storage.clear('key1')
@@ -60,9 +60,9 @@ storage.clear('key1')
 - `ttl`: string
 
 ```javascript
-// 刷新原来的 ttl。如果原来是 10 秒，则 10 秒后才失效
+// refresh original ttl
 storage.updateTTL('key1')
 
-// 10 秒后失效
+// invalid after 10 seconds
 storage.updateTTL('key1', 10)
 ```
