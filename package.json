@@ -39,6 +39,9 @@
   },
   "author": "Zn",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "git": "https://github.com/michaelchan0101/webstorage-utils.git",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
