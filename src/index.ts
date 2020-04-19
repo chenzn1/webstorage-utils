@@ -54,7 +54,7 @@ export default class WebStorageUtil {
   }
   public clear(): void {
     if (this.prefix) {
-      const i = 0
+      let i = 0
       while (i < this.storage.length) {
         const key = this.storage.key(i)
         if (key?.indexOf(`${this.prefix}::`) === 0) {
