@@ -1,7 +1,16 @@
 # webstorage-utils
 一个操作 `WebStorage` 的工具库。
 
-## 使用方式
+## Install
+```
+// npm
+npm install webstorage-utils
+
+// yarn 
+yarn add webstorage-utils
+
+```
+## Use
 ```
 const storage = new WebStorageUtil({ storage: 'localStorage' })
 ```
