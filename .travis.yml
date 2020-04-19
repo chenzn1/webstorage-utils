@@ -58,3 +58,12 @@ jobs:
       on:
         all_branches: true
       if: (branch IN (master)) AND type != pull_request AND !(commit_message =~ /(\[skip master-ci\])/)
+
+deploy:
+  - provider: npm
+    email: ${NPM_EMAIL}
+    api_key: ${NPM_TOKEN}
+    skip_cleanup: true
+    on:
+      branch:
+        - master
