@@ -60,7 +60,7 @@ jobs:
       if: (branch IN (master)) AND type != pull_request AND !(commit_message =~ /(\[skip master-ci\])/)
      - stage: npm release
       if: (branch IN (master)) AND type != pull_request AND !(commit_message =~ /(\[skip master-ci\])/)
-      language: node_js
+      node_js: 10
       before_deploy:
         - cd dist
       deploy:
