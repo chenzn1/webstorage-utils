@@ -8,7 +8,7 @@ export default class WebStorageUtil {
     this.prefix = prefix
   }
   private getKey(key: string): string {
-    return `${this.prefix}:${key}`
+    return `${this.prefix}::${key}`
   }
   private getValueInStorage(key: string): WebStorageValue {
     const result = this.storage.getItem(this.getKey(key))
@@ -53,6 +53,18 @@ export default class WebStorageUtil {
     return value
   }
   public clear(): void {
-    this.storage.clear()
+    if (this.prefix) {
+      let i = 0
+      while (i < this.storage.length) {
+        const key = this.storage.key(i)
+        if (key?.indexOf(`${this.prefix}::`) === 0) {
+          this.storage.removeItem(key)
+        } else {
+          i++
+        }
+      }
+    } else {
+      this.storage.clear()
+    }
   }
 }
