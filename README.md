@@ -1,5 +1,5 @@
 # webstorage-utils
-一个操作 `WebStorage` 的工具库。
+Some utils of `WebStorage`
 
 ## Install
 ```
@@ -21,7 +21,7 @@ const storage = new WebStorageUtil({ storage: 'localStorage' })
   - `storage`: 'localStorage' | 'sessionStorage'
   - `prefix`: string 
 
-### 设置值，storage.set(key, value[, ttl])
+### storage.set(key, value[, ttl])
 - `key`: string
 - `value`: any
 - `ttl`: number, second
