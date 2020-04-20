@@ -1,5 +1,5 @@
 # webstorage-utils
-一个操作 `WebStorage` 的工具库。
+Some utils of `WebStorage`
 
 ## Install
 ```
