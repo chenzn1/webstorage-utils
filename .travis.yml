@@ -13,7 +13,6 @@ before_install:
   - npm install -g yarn@^1.16.0
   - git config user.email "builds@travis-ci.com"
   - git config user.name "Travis CI"
-  - 
 
 install:
   - yarn install --frozen-lockfile
