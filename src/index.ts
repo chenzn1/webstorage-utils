@@ -1,14 +1,17 @@
 import { WebStorageOptions, WebStorageValue } from './types/storage'
-export default class WebStorageUtil {
+
+class WebStorageUtil {
   private storage: Storage
   private prefix: string
   public constructor(options: WebStorageOptions = {}) {
-    const { storage = 'localStorage', prefix = '' } = options
-    this.storage = storage === 'localStorage' ? localStorage : sessionStorage
-    this.prefix = prefix
+    const { storage = 'local', prefix = '' } = options
+    this.storage = ['localStorage', 'local'].includes(storage)
+      ? localStorage
+      : sessionStorage
+    this.prefix = prefix ? `${prefix}::` : ''
   }
   private getKey(key: string): string {
-    return `${this.prefix}::${key}`
+    return `${this.prefix}${key}`
   }
   private getValueInStorage(key: string): WebStorageValue {
     const result = this.storage.getItem(this.getKey(key))
@@ -57,7 +60,7 @@ export default class WebStorageUtil {
       let i = 0
       while (i < this.storage.length) {
         const key = this.storage.key(i)
-        if (key?.indexOf(`${this.prefix}::`) === 0) {
+        if (key?.indexOf(this.prefix) === 0) {
           this.storage.removeItem(key)
         } else {
           i++
@@ -68,3 +71,5 @@ export default class WebStorageUtil {
     }
   }
 }
+
+export default WebStorageUtil
