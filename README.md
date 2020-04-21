@@ -12,13 +12,15 @@ yarn add webstorage-utils
 ```
 ## Use
 ```
+import WebStorageUtil from 'webstorage-utils'
+
 const storage = new WebStorageUtil({ storage: 'localStorage' })
 ```
 
 ## API
 ### new WebStorageUtil(options)
 - options
-  - `storage`: 'localStorage' | 'sessionStorage'
+  - `storage`: 'localStorage' | 'local' | 'sessionStorage' | 'session'
   - `prefix`: string 
 
 ### storage.set(key, value[, ttl])
