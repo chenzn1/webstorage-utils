@@ -1,6 +1,6 @@
 {
   "name": "webstorage-utils",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "web storage utils",
   "main": "dist/web-storage-util.umd.js",
   "module": "dist/web-storage-util.es5.js",
