@@ -1,6 +1,6 @@
 import { WebStorageOptions, WebStorageValue } from './types/storage'
 
-class WebStorageUtil {
+class WebStorageUtils {
   private storage: Storage
   private prefix: string
   public constructor(options: WebStorageOptions = {}) {
@@ -37,11 +37,13 @@ class WebStorageUtil {
     }
     return JSON.stringify(WebStorageValue)
   }
-  public del(key: string): void {
+  public del(key: string): this {
     this.storage.removeItem(this.getKey(key))
+    return this
   }
-  public set(key: string, value: any, ttl?: number): void {
+  public set(key: string, value: any, ttl?: number): this {
     this.storage.setItem(this.getKey(key), this.stringifyValue(value, ttl))
+    return this
   }
   public get(key: string): any {
     const { value } = this.getValueInStorage(key)
@@ -55,7 +57,7 @@ class WebStorageUtil {
     }
     return value
   }
-  public clear(): void {
+  public clear(): this {
     if (this.prefix) {
       let i = 0
       while (i < this.storage.length) {
@@ -69,7 +71,12 @@ class WebStorageUtil {
     } else {
       this.storage.clear()
     }
+    return this
   }
 }
 
-export default WebStorageUtil
+export default WebStorageUtils
+
+export const local = new WebStorageUtils({storage: 'local'})
+
+export const session = new WebStorageUtils({storage: 'session'})
