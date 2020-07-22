@@ -12,9 +12,13 @@ yarn add webstorage-utils
 ```
 ## Use
 ```
-import WebStorageUtil from 'webstorage-utils'
+import { local, session } from 'webstorage-utils'
 
-const storage = new WebStorageUtil({ storage: 'localStorage' })
+local.set('example', 'demo')
+local.get('example') // demo
+
+session.set('example', 'demo')
+session.get('example') // demo
 ```
 
 ## API

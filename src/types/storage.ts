@@ -1,5 +1,5 @@
 export interface WebStorageOptions {
-  storage?: 'localStorage' | 'sessionStorage'
+  storage?: 'localStorage' | 'sessionStorage' | 'local' | 'session'
   prefix?: string
   maxSize?: number
 }
