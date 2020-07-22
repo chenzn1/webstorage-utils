@@ -4,6 +4,7 @@
   "description": "web storage utils",
   "main": "dist/web-storage-util.umd.js",
   "module": "dist/web-storage-util.es5.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
