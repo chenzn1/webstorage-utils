@@ -77,6 +77,6 @@ class WebStorageUtils {
 
 export default WebStorageUtils
 
-export const local = new WebStorageUtils({storage: 'local'})
+export const local = new WebStorageUtils({ storage: 'local' })
 
-export const session = new WebStorageUtils({storage: 'session'})
+export const session = new WebStorageUtils({ storage: 'session' })
