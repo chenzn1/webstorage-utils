@@ -40,7 +40,7 @@ jobs:
         set -e
         yarn bumpVersion:release
         git add .
-        git remote set-url origin "https://${GITHUB_TOKEN}@github.com/michaelchan0101/webstorage-utils.git"
+        git remote set-url origin "https://${GITHUB_TOKEN}@github.com/chenzn1/webstorage-utils.git"
         git push --verbose --no-verify --follow-tags origin HEAD:${TRAVIS_BRANCH}
       skip_cleanup: true
       on:
@@ -54,7 +54,7 @@ jobs:
         set -e
         yarn bumpVersion:master
         git add .
-        git remote set-url origin "https://${GITHUB_TOKEN}@github.com/michaelchan0101/webstorage-utils.git"
+        git remote set-url origin "https://${GITHUB_TOKEN}@github.com/chenzn1/webstorage-utils.git"
         git push --verbose --no-verify --follow-tags origin HEAD:${TRAVIS_BRANCH}
       skip_cleanup: true
       on:

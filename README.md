@@ -1,6 +1,8 @@
 # webstorage-utils
 Some utils of `WebStorage`
 
+[![Build Status](https://app.travis-ci.com/chenzn1/webstorage-utils.svg?branch=master)](https://app.travis-ci.com/chenzn1/webstorage-utils)
+
 ## Install
 ```
 // npm
