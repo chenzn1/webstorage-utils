@@ -12,13 +12,13 @@ yarn add webstorage-utils
 ```
 ## Use
 ```
-import { local, session } from 'webstorage-utils'
+import { localStorageWrapper, sessionStorageWrapper } from 'webstorage-utils'
 
-local.set('example', 'demo')
-local.get('example') // demo
+localStorageWrapper.set('example', 'demo')
+localStorageWrapper.get('example') // demo
 
-session.set('example', 'demo')
-session.get('example') // demo
+sessionStorageWrapper.set('example', 'demo')
+sessionStorageWrapper.get('example') // demo
 ```
 
 ## API
@@ -59,16 +59,4 @@ storage.del('key1')
 
 ```javascript
 storage.clear('key1')
-```
-
-### storage.updateTTL(key[, ttl])
-- `key`: string
-- `ttl`: string
-
-```javascript
-// refresh original ttl
-storage.updateTTL('key1')
-
-// invalid after 10 seconds
-storage.updateTTL('key1', 10)
 ```
