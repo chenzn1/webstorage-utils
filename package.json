@@ -31,8 +31,10 @@
     ]
   },
   "keywords": [
-    "web",
-    "web storage"
+    "localstorage",
+    "sessionstorage",
+    "webstorage",
+    "storage"
   ],
   "engines": {
     "node": ">=8.0.0",
