@@ -5,7 +5,6 @@ export interface WebStorageOptions {
 }
 
 export interface WebStorageValue {
-  value?: any
-  expiredAt?: number
-  ttl?: number
+  v?: any
+  e?: number
 }
