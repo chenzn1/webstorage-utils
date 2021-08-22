@@ -45,7 +45,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaelchan0101/webstorage-utils.git"
+    "url": "https://github.com/chenzn1/webstorage-utils.git"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
