@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.7 (2022-02-20)
+
+
+### Bug Fixes
+
+* **action:** bump version ([1abd736](https://github.com/chenzn1/webstorage-utils/commit/1abd7365802aa965381fb47485b1f4b21938676f))
+
 ### [1.2.5](https://github.com/chenzn1/webstorage-utils/compare/v1.2.4...v1.2.5) (2021-09-16)
 
 ### [1.2.4](https://github.com/chenzn1/webstorage-utils/compare/v1.2.3...v1.2.4) (2021-08-22)
