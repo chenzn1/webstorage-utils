@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.8 (2022-02-20)
+
+
+### Bug Fixes
+
+* **action:** npm publish ([504cbdb](https://github.com/chenzn1/webstorage-utils/commit/504cbdb2f249d94b95191416490b43d85df2ffd4))
+
 ### 1.2.7 (2022-02-20)
 
 
