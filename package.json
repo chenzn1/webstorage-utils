@@ -16,8 +16,7 @@
     "start": "rollup -c rollup.config.ts -w",
     "prepublishOnly": "yarn build",
     "generateDoc": "typedoc --options typedoc.js",
-    "bumpVersion:master": "standard-version --commit-all --message 'chore(production): %s\n\n[skip master-ci]' --no-verify",
-    "bumpVersion:release": "standard-version --commit-all --message 'chore(release): %s\n\n[skip release-ci]' --no-verify --prerelease alpha"
+    "bump-version": "standard-version"
   },
   "husky": {
     "hooks": {
@@ -67,7 +66,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.5.0",
     "rollup-plugin-typescript2": "^0.27.0",
-    "standard-version": "^8.0.1",
+    "standard-version": "^9.3.2",
     "typescript": "^3.8.3"
   },
   "dependencies": {}
