@@ -1,7 +1,7 @@
 # webstorage-utils
 Some utils of `WebStorage`
 
-[![Build Status](https://app.travis-ci.com/chenzn1/webstorage-utils.svg?branch=master)](https://app.travis-ci.com/chenzn1/webstorage-utils)
+[![Build Status](https://github.com/chenzn1/webstorage-utils/actions/workflows/yarn-test.yml/badge.svg?branch=master&event=push)](https://github.com/chenzn1/webstorage-utils/actions/workflows/yarn-test.yml)
 
 ## Install
 ```
