@@ -1,7 +1,7 @@
 # webstorage-utils
 Some utils of `WebStorage`
 
-[![Build Status](https://github.com/chenzn1/webstorage-utils/actions/workflows/yarn-test.yml/badge.svg?branch=master&event=push)](https://github.com/chenzn1/webstorage-utils/actions/workflows/yarn-test.yml)
+[![lint-and-build](https://github.com/chenzn1/webstorage-utils/actions/workflows/lint-and-build.yml/badge.svg?branch=master)](https://github.com/chenzn1/webstorage-utils/actions/workflows/lint-and-build.yml)
 
 ## Install
 ```
