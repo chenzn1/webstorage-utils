@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/chenzn1/webstorage-utils/compare/v1.2.8...v1.4.0) (2023-09-05)
+
+
+### Features
+
+* export `localStorage` and `sessionStorage` ([608251a](https://github.com/chenzn1/webstorage-utils/commit/608251acac35d6767781f3f6a7710e8e64e2ea11))
+
 ### [1.2.9](https://github.com/chenzn1/webstorage-utils/compare/v1.2.8...v1.2.9) (2023-03-07)
 
 ### 1.2.8 (2022-02-20)
