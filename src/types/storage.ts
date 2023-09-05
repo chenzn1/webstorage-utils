@@ -4,7 +4,7 @@ export interface WebStorageOptions {
   maxSize?: number
 }
 
-export interface WebStorageValue {
-  v?: any
+export interface WebStorageValue<T = any> {
+  v?: T
   e?: number
 }

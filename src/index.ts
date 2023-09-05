@@ -6,8 +6,8 @@ export default class WebStorageUtils {
   public constructor(options: WebStorageOptions = {}) {
     const { storage = 'local', prefix = '' } = options
     this.storage = ['localStorage', 'local'].includes(storage)
-      ? localStorage
-      : sessionStorage
+      ? window.localStorage
+      : window.sessionStorage
     this.prefix = prefix ? `${prefix}::` : ''
   }
 
@@ -15,9 +15,9 @@ export default class WebStorageUtils {
     return `${this.prefix}${key}`
   }
 
-  private getValueInStorage(key: string): WebStorageValue {
+  private getValueInStorage<T = any>(key: string): WebStorageValue<T> | undefined {
     const result = this.storage.getItem(this.getKey(key))
-    let value: WebStorageValue = {}
+    let value: WebStorageValue<T> | undefined
     if (result) {
       try {
         const data = JSON.parse(result)
@@ -50,9 +50,8 @@ export default class WebStorageUtils {
     return this
   }
 
-  public get(key: string): any {
-    const { v } = this.getValueInStorage(key)
-    return v
+  public get<T = any>(key: string): T | undefined {
+    return this.getValueInStorage<T>(key)?.v
   }
 
   public clear(): this {
@@ -74,9 +73,9 @@ export default class WebStorageUtils {
 }
 
 export const local = new WebStorageUtils({ storage: 'local' })
-
-export const localStorageWrapper = new WebStorageUtils({ storage: 'local' })
+export const localStorageWrapper = local
+export const localStorage = localStorageWrapper
 
 export const session = new WebStorageUtils({ storage: 'session' })
-
-export const sessionStorageWrapper = new WebStorageUtils({ storage: 'session' })
+export const sessionStorageWrapper = session
+export const sessionStorage = session

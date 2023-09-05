@@ -14,17 +14,17 @@ yarn add webstorage-utils
 ```
 ## Use
 ```
-import { localStorageWrapper, sessionStorageWrapper } from 'webstorage-utils'
+import { localStorage, sessionStorage } from 'webstorage-utils'
 
-localStorageWrapper.set('example', 'demo')
-localStorageWrapper.get('example') // demo
+localStorage.set('example', 'demo')
+localStorage.get('example') // demo
 
-sessionStorageWrapper.set('example', 'demo')
-sessionStorageWrapper.get('example') // demo
+sessionStorage.set('example', 'demo')
+sessionStorage.get('example') // demo
 ```
 
 ## API
-### new WebStorageUtil(options)
+### new WebStorageUtils(options)
 - options
   - `storage`: 'localStorage' | 'local' | 'sessionStorage' | 'session'
   - `prefix`: string 
